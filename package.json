@@ -1,5 +1,5 @@
 {
-  "name": "movie-web",
+  "name": "movie-arena",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:movie-web": "node dist/movie-web/server/server.mjs"
+    "serve:ssr:movie-arena": "node dist/movie-arena/server/server.mjs"
   },
   "private": true,
   "dependencies": {
