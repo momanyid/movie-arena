@@ -1,0 +1,141 @@
+/* ══════════════════════════════════════════════════════════
+   Movie Arena – Global Stylesheet
+   All component styles live in their own component :host
+   This file handles tokens, resets, and typography only.
+══════════════════════════════════════════════════════════ */
+
+/* ── Design Tokens ─────────────────────────────────────── */
+:root {
+  --crimson:        #8B0000;
+  --crimson-light:  #A51010;
+  --crimson-dark:   #5C0000;
+  --crimson-muted:  #6B0000;
+  --surface:        #1A0505;
+  --surface-alt:    #230808;
+  --surface-card:   #2A0A0A;
+  --sidebar-bg:     #1C0606;
+  --text-primary:   #F5EDED;
+  --text-muted:     #B09090;
+  --text-dim:       #7A5555;
+  --accent:         #FF4444;
+  --accent-gold:    #FFB347;
+  --border:         rgba(139, 0, 0, 0.3);
+  --nav-h:          70px;
+  --sidebar-w:      240px;
+  --font-display:   'Bebas Neue', sans-serif;
+  --font-body:      'DM Sans', sans-serif;
+  --radius-sm:      6px;
+  --radius-md:      12px;
+  --radius-lg:      20px;
+  --shadow-card:    0 8px 32px rgba(0, 0, 0, 0.5);
+  --transition:     0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Reset ─────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--surface);
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  font-family: var(--font-body);
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+/* ── Custom Scrollbar ──────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--surface);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--crimson-muted);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--crimson-light);
+}
+
+/* ── Focus Visible ─────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+/* ── View Transitions API (Angular 17+) ────────────────── */
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+:root {
+  view-transition-name: root;
+}
+
+::view-transition-old(root) {
+  animation: 180ms ease-out both fade-out;
+}
+
+::view-transition-new(root) {
+  animation: 280ms ease-in both fade-in;
+}
+
+@keyframes fade-out {
+  to { opacity: 0; }
+}
+
+/* ── Utility Classes ───────────────────────────────────── */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

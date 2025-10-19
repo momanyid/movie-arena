@@ -1,1 +1,28 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --bg-dark: #120202;
+  --bg-panel: #2a0808;
+  --primary-red: #7b1113;
+  --text-main: #ffffff;
+  --text-muted: #b3b3b3;
+  --navbar-bg: #e6e6e6;
+  --navbar-text: #000000;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+}
+
+/* Main App Layout using CSS Grid */
+.app-layout {
+  display: grid;
+  grid-template-areas: 
+    "nav nav"
+    "sidebar main";
+  grid-template-columns: 250px 1fr;
+  grid-template-rows: 70px 1fr;
+  height: 100vh;
+  overflow: hidden;
+}
